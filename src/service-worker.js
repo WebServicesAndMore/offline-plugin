@@ -97,7 +97,7 @@ export default class ServiceWorker {
     ) {
       // Do not perform auto-minification if MinificationPlugin isn't installed
 
-      const added = ((optimization.minimize && optimization.minimizer) || [])
+      const added = ((optimization.minimize && optimization.minify) || [])
       .concat(compiler.options.plugins || []).some((plugin) => {
         if (isMinificationPlugin(plugin)) {
           const options = deepExtend({}, plugin.options);
